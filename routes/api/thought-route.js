@@ -6,8 +6,6 @@ const {
     getAllThoughts, 
     getThoughtsById, 
     createThoughts, 
-    updateThoughts,
-    deleteThoughts,
     addReaction,
     deleteReaction
 
@@ -17,8 +15,7 @@ const {
 router.route('/').get(getAllThoughts);
 
 //gets one thought by an id and one can update and delete the thought
-router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts); 
-
+router.route('/:id').get(getThoughtsById)
 
 //post rought to create a thought based on a user id
 router.route('/:userId').post(createThoughts);
