@@ -1,6 +1,6 @@
 const express = require('express');
 const db = require('./config/connection')
-const routes = require('./routes')
+const routes = require('./routes');
 
 const app = express();
 
@@ -15,6 +15,5 @@ db.once('open', () => {
     console.log(`API server running on port ${PORT}!`);
   });
 });
-
 
 
