@@ -13,19 +13,20 @@ const {
 
 } = require('../../controllers/thoughts-controller');
 
-// -- Directs to: /api/thoughts <GET>
+//gets all thoughts 
 router.route('/').get(getAllThoughts);
 
-// -- Directs to: /api/thoughts/:id <GET, PUT, DELETE>
+//gets one thought by an id and one can update and delete the thought
 router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts); 
 
-// -- Directs to: /api/thoughts/:userId <POST>
+
+//post rought to create a thought based on a user id
 router.route('/:userId').post(createThoughts);
 
-// -- Directs to: /api/thoughts/:thoughtId/reactions <POST>
+//post route to add a reaction to a thought
 router.route('/:thoughtId/reactions').post(addReaction);
 
-// -- Directs to: /api/thoughts/:thoughtId/reactionId <DELETE>
+//for one thought one can delete a reaction based on the id
 router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
 
 // Export module router

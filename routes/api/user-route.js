@@ -1,7 +1,7 @@
 // Require express router
 const router = require('express').Router();
 
-// Set requirements (from users-controller)
+// Set requirements (from user-controller)
 const {
     getAllUsers,
     getUsersById,
@@ -12,13 +12,13 @@ const {
     deleteFriend
   } = require('../../controllers/user-controller');
 
-// -- Directs to: /api/users <GET, POST>
+//get all users and then one can post based on the user 
 router.route('/').get(getAllUsers).post(createUsers);
 
-// -- Directs to: /api/users/:id <GET, PUT, DELETE>
+//get user by id and one can update and delete it
 router.route('/:id').get(getUsersById).put(updateUsers).delete(deleteUsers);
 
-// -- Directs to: /api/users/:userId/friends/:friendId <POST, DELETE>
+//for each user based on id one can add and delete friends 
 router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend)
 
 // Module export router
