@@ -10,7 +10,7 @@
 ## Description
 An API for users to share their thoughts, reactions with friends. All GET, POST, PUT and DELETE routes for thoughts and users tested in insomnia. 
 
-![image](https://drive.google.com/file/d/1MC0ify838qVKkElyLiBjc3T87cUyG7yp/view)
+![Insomnia](./assets/userData.JPG)
 
 ## Code Snippet
 To find one user by ID the mongoose findOne() method was used. 
