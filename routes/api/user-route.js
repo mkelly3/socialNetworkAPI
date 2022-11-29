@@ -18,6 +18,7 @@ router.route('/').get(getAllUsers).post(createUsers);
 //get user by id and one can update and delete it
 router.route('/:id').get(getUsersById).put(updateUsers).delete(deleteUsers);
 
+
 //for each user based on id one can add and delete friends 
 router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend)
 

@@ -11,11 +11,10 @@ module.exports = {
 
     //get one thought by id
     getThoughtsById(req,res){
-        Thoughts.findOne({_id: params.thoughtId })
-        .select("-__v")
+        Thoughts.findOne({_id: req.params.id })
         .then((thought) =>
         !thought
-        ? res.status(404).json({ message: 'No course with that ID' })
+        ? res.status(404).json({ message: 'No thought with that ID' })
         : res.json(thought)
     )
     .catch((err) => res.status(500).json(err));

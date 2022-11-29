@@ -11,8 +11,7 @@ module.exports = {
     },
     //find user by id
     getUsersById(req,res){
-        Users.findOne({ _id: req.params._id })
-        .select('-__v')
+        Users.findOne({ _id: req.params.id })
         .then((user) =>
           !user
             ? res.status(404).json({ message: 'No user with that ID' })
@@ -50,7 +49,7 @@ module.exports = {
                 res.status(404).json({message: 'No User with this particular ID!'});
                 return;
             }
-            res.json(dbUsersData);
+            res.json("User has been deleted");
         })
         .catch(err => res.status(400).json(err));
     },
